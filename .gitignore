@@ -1,0 +1,46 @@
+# ---- Binarios compilados (se generan con `make`) ----
+native/dt-parse
+native/dt-patch
+native/dt-apply
+native/mkdt-sample
+native/test-dt
+*.o
+*.out
+*.elf
+
+# ---- Artefactos del Device Tree generados en pruebas ----
+native/sample_dt.bin
+native/patched_dt.bin
+native/applied_dt.bin
+*.lab.bin
+
+# ---- Firmware de Apple: NUNCA subir (legal) ----
+*.ipsw
+out_firmware/
+**/kernelcache*
+**/device_tree*.bin
+**/ramdisk*.dmg
+**/*.im4p
+**/*.dmg
+
+# ---- Salidas de instrumentacion ----
+*.jsonl
+*.log
+*.csv
+
+# ---- Build de QEMU / dependencias ----
+build/
+QEMUAppleSilicon/
+lzfse/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- Editores / SO ----
+.vscode/
+.idea/
+.DS_Store
+*.swp

@@ -1,0 +1,14 @@
+# lab.patches - parches declarativos para preparar un Device Tree de lab
+# Formato:  <ruta-nodo>/<propiedad> = <valor>
+#   "texto"   -> string        <0xNN> -> u32        [hh hh] -> bytes
+#   !delete   -> elimina la propiedad
+# Lineas con '#' o vacias se ignoran.
+
+# Boot-args permisivos para instrumentacion dinamica (solo lab emulado)
+/chosen/boot-args     = "-v debug=0x14e amfi_get_out_of_my_way=1 cs_enforcement_disable=1"
+
+# Forzar modo debug del kernel
+/chosen/debug-enabled = <0x1>
+
+# Ejemplo de mutacion de bytes en un nodo de periferico
+/arm-io/ranges        = [00 00 00 02 00 00 20 00]
